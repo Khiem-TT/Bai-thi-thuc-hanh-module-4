@@ -2,7 +2,7 @@ import {StudentModel} from "../schemas/models/student.model";
 
 export class StudentController {
     static async getListStudent(req, res) {
-        const students = await StudentModel.find();
+        const students = await StudentModel.find().sort({theory_point: 1});
         res.render('listStudent', {students});
     }
 
